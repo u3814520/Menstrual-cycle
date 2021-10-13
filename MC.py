@@ -20,6 +20,7 @@ try:
                     mm=int(out_MC[5:7])
                     print(f'下次排卵日期是:{out_date}')
                     print(f'下次經期日期是:{out_MC}')
+                    print()
                     print(calendar.month(yy,mm))
                 except ValueError:
                     print('請輸入數字。')
