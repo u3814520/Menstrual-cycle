@@ -1,5 +1,6 @@
 import time
 import datetime
+import calendar
 
 localtime = time.localtime(time.time())
 try:
@@ -15,8 +16,11 @@ try:
                     dt = datetime.datetime.strptime(in_date, '%Y-%m-%d')
                     out_date = (dt + datetime.timedelta(days=Half_cycle)).strftime('%Y-%m-%d')
                     out_MC = (dt + datetime.timedelta(days=cycle)).strftime('%Y-%m-%d')
+                    yy = int(out_MC[0:4])
+                    mm = int(out_MC[5:7])
                     print(f'下次排卵日期是:{out_date}')
                     print(f'下次經期日期是:{out_MC}')
+                    print(calendar.month(yy, mm))
                     input()
                 except ValueError:
                     print('請輸入數字。')
